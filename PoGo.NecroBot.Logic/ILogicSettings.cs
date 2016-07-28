@@ -89,6 +89,7 @@ namespace PoGo.NecroBot.Logic
         string ProfileConfigPath { get; }
         string GeneralConfigPath { get; }
         bool SnipeAtPokestops { get; }
+        bool UseDiscordSniper { get; }
 
         ICollection<KeyValuePair<ItemId, int>> ItemRecycleFilter { get; }
 

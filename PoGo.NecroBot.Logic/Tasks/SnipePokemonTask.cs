@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using GeoCoordinatePortable;
 using Newtonsoft.Json;
 using PoGo.NecroBot.Logic.Event;
 using PoGo.NecroBot.Logic.State;
@@ -49,6 +50,11 @@ namespace PoGo.NecroBot.Logic.Tasks
     public static class SnipePokemonTask
     {
         public static List<PokemonLocation> locsVisited = new List<PokemonLocation>();
+
+        public static async Task Execute(ISession session, GeoCoordinate x, PokemonId Id)
+        {
+            // TODO: Snipe a particular pokemon
+        }
 
         public static async Task Execute(ISession session)
         {

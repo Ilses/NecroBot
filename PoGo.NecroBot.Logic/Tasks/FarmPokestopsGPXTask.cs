@@ -11,6 +11,7 @@ using PoGo.NecroBot.Logic.State;
 using PoGo.NecroBot.Logic.Utils;
 using PokemonGo.RocketAPI.Extensions;
 using POGOProtos.Map.Fort;
+using GeoCoordinatePortable;
 
 #endregion
 
@@ -97,6 +98,22 @@ namespace PoGo.NecroBot.Logic.Tasks
                             if (session.LogicSettings.SnipeAtPokestops)
                             {
                                 await SnipePokemonTask.Execute(session);
+                            }
+
+                            if (session.LogicSettings.UseDiscordSniper)
+                            {
+                                // TODO Get list of pokemon, locations from discord
+
+                                // For each entry, parse it
+
+                                // For good entries
+                                double lat = 0, lon = 0;
+                                POGOProtos.Enums.PokemonId Id = POGOProtos.Enums.PokemonId.Mew;
+
+                                GeoCoordinate loc = new GeoCoordinate(lat, lon);
+                                // Convert pokemon name to pokemonId
+
+                                await SnipePokemonTask.Execute(session, loc, Id);
                             }
 
                             if (session.LogicSettings.EvolveAllPokemonWithEnoughCandy ||
